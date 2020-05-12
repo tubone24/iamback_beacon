@@ -1,0 +1,74 @@
+{
+  "name": "line-iamback-beacon",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "lint": "tslint --fix src/**/*.ts",
+    "test": "jest --coverage",
+    "build": "npm run lint  && rimraf dist && webpack && cpx src/appsscript.json dist",
+    "deploy": "npm run build && clasp push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tubone24/iamback_beacon.git"
+  },
+  "keywords": [
+    "LINE",
+    "LINE Beacon",
+    "Slack",
+    "gas",
+    "google-apps-script",
+    "clasp"
+  ],
+  "author": "tubone24",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tubone24/iamback_beacon/issues"
+  },
+  "homepage": "https://github.com/tubone24/iamback_beacons#readme",
+  "devDependencies": {
+    "@types/google-apps-script": "0.0.59",
+    "@types/jest": "24.0.18",
+    "@types/node": "^13.9.0",
+    "braces": "2.3.1",
+    "cpx": "1.5.0",
+    "gas-webpack-plugin": "1.0.2",
+    "jest": "24.9.0",
+    "prettier": "1.18.2",
+    "rimraf": "3.0.0",
+    "ts-jest": "24.0.2",
+    "ts-loader": "6.0.4",
+    "tslint": "5.19.0",
+    "tslint-config-prettier": "1.18.0",
+    "tslint-plugin-prettier": "2.0.1",
+    "typescript": "3.5.3",
+    "webpack": "4.39.3",
+    "webpack-cli": "3.3.8"
+  },
+  "jest": {
+    "verbose": true,
+    "globals": {
+      "UrlFetchApp": {},
+      "ContentService": {},
+      "PropertiesService": {}
+    },
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(tests/.+(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "dependencies": {
+    "dotenv": "^8.1.0",
+    "fs": "0.0.1-security",
+    "gas-local": "^1.3.1"
+  }
+}
